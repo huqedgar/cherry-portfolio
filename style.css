@@ -21,6 +21,25 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.animation-fill {
+  background: url("assets/images/back.jpg");
+  background-size: auto 200%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    background-position: center 0;
+  }
+  to {
+    background-position: center 200%;
+  }
+}
+
 #loader {
   display: flex;
   justify-content: center;
@@ -134,8 +153,26 @@ a {
 }
 
 .btn {
-  font-weight: 500;
-  text-transform: uppercase;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 550;
+  text-transform: capitalize;
+}
+
+.btn:after {
+  content: "";
+  display: block;
+  transform: translateY(-50%);
+  height: 0.1rem;
+  width: 0px;
+  background-color: #fff;
+  margin-top: 3px;
+  transition: 0.25s ease-in-out;
+  z-index: 2;
+}
+
+.btn:hover::after {
+  width: 100%;
 }
 
 .wrapper {
