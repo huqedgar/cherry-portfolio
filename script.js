@@ -1,7 +1,7 @@
 ////////////////////////////////////////////// DISABLE SCROLL
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+let keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
 function preventDefault(e) {
   e.preventDefault();
@@ -15,7 +15,7 @@ function preventDefaultForScrollKeys(e) {
 }
 
 // modern Chrome requires { passive: false } when adding event
-var supportsPassive = false;
+let supportsPassive = false;
 try {
   window.addEventListener(
     "test",
@@ -28,8 +28,8 @@ try {
   );
 } catch (e) {}
 
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent =
+let wheelOpt = supportsPassive ? { passive: false } : false;
+let wheelEvent =
   "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
 
 // call this to Disable
@@ -69,6 +69,7 @@ gsap.to(".img-container", {
     pin: true,
   },
 });
+
 gsap.to(".right", {
   autoAlpha: 0,
   x: 500,
@@ -77,6 +78,7 @@ gsap.to(".right", {
     start: 1,
   },
 });
+
 gsap.to(".left", {
   autoAlpha: 0,
   x: -500,
@@ -85,6 +87,7 @@ gsap.to(".left", {
     start: 1,
   },
 });
+
 gsap.to(".txt-bottom", {
   autoAlpha: 0,
   letterSpacing: -10,
